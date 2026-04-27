@@ -1,0 +1,28 @@
+[run]
+source = app
+branch = True
+omit =
+    app/lib/reverse_document/doc.py
+    app/*.test.py
+    app/test_*.py
+    app/simulate_*.py
+    app/set_env.py
+    app/mock_tech_spec.py
+    app/__pycache__/*
+
+[report]
+precision = 2
+show_missing = True
+skip_covered = False
+fail_under = 15
+exclude_lines =
+    pragma: no cover
+    raise NotImplementedError
+    if __name__ == .__main__.:
+    if TYPE_CHECKING:
+
+[html]
+directory = htmlcov
+
+[xml]
+output = coverage.xml
